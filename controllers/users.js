@@ -19,7 +19,7 @@ const viewOneUser = async (req, res) => {
     if (!user) {
       return res.status(400).json({ msg: "user id not found" });
     }
-    res.status(200).json({ user: user });
+    res.status(200).json({ user: user.username, pantry: user.pantry });
   } catch (error) {
     res.status(200).json({ error: error.message });
   }
